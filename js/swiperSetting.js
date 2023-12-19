@@ -1,10 +1,8 @@
-const swiper = new Swiper('.swiper-fade', {
-  
+const swiper = new Swiper('.swiper', {
   slidesPerView: 3,
-  spaceBetween: 30,
-  freeMode: true,
-  
-   // Optional parameters
+  spaceBetween: 10,
+
+  // Optional parameters
   direction: 'horizontal',
   loop: true,
   autoplay: {
@@ -25,5 +23,6 @@ const swiper = new Swiper('.swiper-fade', {
   // And if we need scrollbar
   scrollbar: {
     el: '.swiper-scrollbar',
+    draggable: true,
   },
 });

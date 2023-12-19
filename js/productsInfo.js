@@ -17,20 +17,30 @@ fetchData().then(() => {
   }
 });
 
+
 const productTable = document.getElementById('products');
 
 function renderProductTable(data) {
   const divElement = document.createElement('div');
 
+  // Render header row
+  divElement.innerHTML += `
+        <ul class="title-list">
+          <li class="title-list-item">Найменування</li>
+          <li class="title-list-item">Вага, г</li>
+          <li class="title-list-item">Термін зберігання, міс</li>
+          <li class="title-list-item">Упаковка, кг/шт в ящ</li>
+          <li class="title-list-item">Ціна з ПДВ, грн</li>
+        </ul>`
   data.forEach((item) => {
     divElement.innerHTML += `
-      <div class="test">
+      
         <h3 class="product-header">${item.SubHead}</h3>
         <div class="accordion">
         ${
-          item.Info &&
-          item.Info.map(
-            (infoItem) => `
+          item.Info
+            ? item.Info.map(
+                (infoItem) => `
             <ul class="title-list">
               <li class="title-list-item">${infoItem.Name}</li>
               <li class="title-list-item">${infoItem.Weight}</li>
@@ -38,30 +48,10 @@ function renderProductTable(data) {
               <li class="title-list-item">${infoItem.Packaging}</li>
               <li class="title-list-item">${infoItem.Price}</li>
             </ul>`
-          ).join('')
+              ).join('')
+            : ''
         }
-        </div>
       </div>`;
-
-    /*   divElement.innerHTML += `<details><summary class="product-header">${
-      item.SubHead
-    }</summary>
-           ${
-             item.Info &&
-             item.Info.map(
-               (infoItem) => `
-            <ul class="title-list">
-              <li class="title-list-item">${infoItem.Name}</li>
-              <li class="title-list-item">${infoItem.Weight}</li>
-              <li class="title-list-item">${infoItem.ExpirationDate}</li>
-              <li class="title-list-item">${infoItem.Packaging}</li>
-              <li class="title-list-item">${infoItem.Price}</li>
-            </ul>`
-             ).join('')
-           }
-    </details>
-        
-      `;*/
   });
 
   productTable.appendChild(divElement);
