@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="icon"
+      href="https://dominik.ua/wp-content/uploads/2019/05/logo-dominik.png.pagespeed.ce.cairFAxCt2.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="https://dominik.ua/wp-content/uploads/2019/05/logo-dominik.png.pagespeed.ce.cairFAxCt2.png"
+      sizes="192x192"
+    />
+    <title>Домінік</title>
+  </head>
+  <body>
+    <!-- top-nav -->
+    <section class="top-nav">
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+      <nav class="nav">
+        <a class="nav-item" href="">про нас</a>
+        <a class="nav-item" href="">продукція</a>
+        <img class="logo" src="./img/logo-dominik.png" alt="logo" />
+        <a class="nav-item" href="">новини</a>
+        <a class="nav-item" href="">контакти</a>
+      </nav>
+    </section>
+    <!-- main -->
+    <section class="main" id="main">
+      <div class="swiper-fade">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="img/candys.jpg" /></div>
+          <div class="swiper-slide"><img src="img/karamel.jpg" /></div>
+          <div class="swiper-slide"><img src="img/sneks.jpg" /></div>
+          <div class="swiper-slide"><img src="img/wafles.jpg" /></div>
+          <div class="swiper-slide"><img src="img/cookies.jpg" /></div>
+          <div class="swiper-slide"><img src="img/drazhe.jpg" /></div>
+          <div class="swiper-slide"><img src="img/combine_product.jpg" /></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+    <!-- products -->
+    <section class="products">
+      <h2 class="subheader">Наша продукція</h2>
+
+      <div class="table-container" id="products">
+        <ul class="title-list">
+          <li class="title-list-item">Найменування</li>
+          <li class="title-list-item">Вага, г</li>
+          <li class="title-list-item">Термін зберігання, міс</li>
+          <li class="title-list-item">Упаковка, кг/шт в ящ</li>
+          <li class="title-list-item">Ціна з ПДВ, грн</li>
+        </ul>
+        <h3 class="product-header">ВАГОВА ПРОДУКЦІЯ</h3>
+        <!-- <details>
+          <summary>КАРАМЕЛЬ ЖУВАЛЬНА</summary>
+          <ul class="title-list">
+            <li class="title-list-item">"Жуйчики" зі смаком йогурт-малина</li>
+            <li class="title-list-item">1000</li>
+            <li class="title-list-item">12</li>
+            <li class="title-list-item">3,5</li>
+            <li class="title-list-item">98,3</li>
+          </ul>
+        </details>
+        -->
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/swiperSetting.js"></script>
+    <script src="js/productsInfo.js"></script>
+  </body>
+</html>
