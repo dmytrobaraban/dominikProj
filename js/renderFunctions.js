@@ -4,6 +4,76 @@ const aboutUsRow =
 const productRow =
   'https://gist.githubusercontent.com/YugerKakein/93fe02841929be3236a0c6514d3cbbd4/raw/d0bed207ffcb0b5131301a2b9b2b8bfac16e80e8/data.json';
 
+const newsRow =
+  'https://gist.githubusercontent.com/YugerKakein/5fd61b3143de3864fad3acc75604bcbe/raw/48b681769587be2b80ad453223c8a3c15561bef3/news_data.json';
+
+/* news */
+
+let jsonDataNews;
+
+async function fetchDataNews() {
+  try {
+    const response = await fetch(newsRow);
+    jsonDataNews = await response.json();
+    if (jsonDataNews) {
+      initNews();
+    } else {
+      console.error('Invalid JSON data structure.');
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    console.error('Invalid JSON data structure.');
+  }
+}
+
+fetchDataNews();
+
+function renderNewsContent(data) {
+  const sectionElement = document.createElement('section');
+
+  // Set the id attribute for the section element
+  sectionElement.id = 'news';
+  sectionElement.className = 'news';
+
+  sectionElement.innerHTML += `<!-- News -->
+    <h2 class="subheader">Новини</h2>
+    <section class="news" id="news">
+      ${data
+        .map(
+          (item) => `<div class="post">
+                      <img src="${item.IMG}" alt="Post Image">
+                      <div class="detail">
+                        <time class="entry-date">${item.Time}</time>
+                        <p class="post-header">
+                          <a href="${item.Url}" target="_blank">
+                            ${item.Header}
+                          </a>
+                        </p>
+                        ${
+                          item.Details
+                            ? item.Details.map(
+                                (itemDetail) =>
+                                  `<p class="post-title">${itemDetail.Paragraph}</p>`
+                              ).join('')
+                            : ''
+                        }
+                        <button class="read-more">
+                          <a href="${item.Url}" target="_blank">Читати все</a>
+                        </button>
+                      </div>
+                    </div>`
+        )
+        .join('')}
+    </section>`;
+
+  contentContainer.innerHTML = ''; // Clear previous content
+  contentContainer.appendChild(sectionElement);
+}
+
+function initNews() {
+  renderNewsContent(jsonDataNews);
+}
+
 /* about-us page */
 
 let jsonDataAbout;
@@ -26,8 +96,13 @@ async function fetchDataAbout() {
 fetchDataAbout();
 
 function renderAboutUsContent(data) {
-  const divElement = document.createElement('div');
-  divElement.innerHTML = ` <!-- about us -->
+  const sectionElement = document.createElement('section');
+
+  // Set the id attribute for the section element
+  sectionElement.id = 'about-us';
+  sectionElement.className = 'about-us';
+  // Render products section header
+  sectionElement.innerHTML = ` <!-- about us -->
     <h2 class="subheader">Про компанію</h2>
     <section class="about-us" id="about-us">
       <div class="about-us-img">
@@ -47,7 +122,7 @@ function renderAboutUsContent(data) {
     </section>`;
 
   contentContainer.innerHTML = ''; // Clear previous content
-  contentContainer.appendChild(divElement);
+  contentContainer.appendChild(sectionElement);
 }
 
 function initAboutUs() {
@@ -148,9 +223,12 @@ function handleNavigation(hash) {
     case '#product':
       if (jsonDataProduct) initProductTable();
       break;
+    case '#news':
+      if (jsonDataNews) initNews();
+      break;
     // Add more cases for other sections if needed
     default:
-      // Handle unknown hash or default case
+      if (jsonDataNews) initNews();
       break;
   }
 }

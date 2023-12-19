@@ -9,6 +9,22 @@
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/organisation.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/keyhole.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/phone.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/mail.css"
+      rel="stylesheet"
+    />
+    <link
       rel="icon"
       href="https://dominik.ua/wp-content/uploads/2019/05/logo-dominik.png.pagespeed.ce.cairFAxCt2.png"
       sizes="32x32"
@@ -41,13 +57,51 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class="swiper-slide"><img src="img/candys.jpg" /></div>
-          <div class="swiper-slide"><img src="img/karamel.jpg" /></div>
-          <div class="swiper-slide"><img src="img/sneks.jpg" /></div>
-          <div class="swiper-slide"><img src="img/wafles.jpg" /></div>
-          <div class="swiper-slide"><img src="img/cookies.jpg" /></div>
-          <div class="swiper-slide"><img src="img/drazhe.jpg" /></div>
-          <div class="swiper-slide"><img src="img/combine_product.jpg" /></div>
+          <div class="swiper-slide">
+            <a
+              href="https://dominik.ua/product-category/czukerki/"
+              target="_blank"
+              ><img src="img/candys.jpg"
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://dominik.ua/product-category/karamel/"
+              target="_blank"
+              ><img src="img/karamel.jpg"
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://dominik.ua/product-category/snekova-produkcziya/"
+              target="_blank"
+              ><img src="img/sneks.jpg"
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://dominik.ua/product-category/vafli/" target="_blank"
+              ><img src="img/wafles.jpg"
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://dominik.ua/product-category/pechivo/"
+              target="_blank"
+              ><img src="img/cookies.jpg"
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://dominik.ua/product-category/drazhe/"
+              ><img src="img/drazhe.jpg"
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://dominik.ua/product-category/kombinovani-produkti/"
+              target="_blank"
+              ><img src="img/combine_product.jpg"
+            /></a>
+          </div>
         </div>
         <!-- If we need pagination -->
         <!--         <div class="swiper-pagination"></div>
@@ -57,11 +111,47 @@
         <div class="swiper-button-next"></div>
       </div>
     </section>
-    <div id="root">
-      <!-- news -->
-      <section class="news" id="news">news</section>
+    <div id="root"></div>
     <!-- footer -->
-    <footer id="contacts">footer</footer>
+    <footer id="contacts" class="contacts">
+      <div class="footer-container">
+        <div class="contacts-container">
+          <h3 class="our-contacts">наші контакти</h3>
+          <ul class="contact-list">
+            <li>
+              <i class="gg-keyhole"></i>Україна, 36009, м. Полтава, вул.
+              Решетилівська, 2
+            </li>
+            <li>
+              <i class="gg-organisation"></i>
+              <a href="tel:+380532505040">+38 (0532) 50-50-40 - факс</a>
+            </li>
+            <li>
+              <i class="gg-phone"></i>
+              <a href="tel:+380532615109">+38 (0532) 61-51-09</a>
+            </li>
+            <li>
+              <i class="gg-mail"></i
+              ><a href="mailto:secretariat@dominik.ua"
+                >secretariat@dominik.ua</a
+              >
+            </li>
+          </ul>
+          <img src="img/footer-logo.png" alt="footer-logo" />
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2585.861348258847!2d34.52437801328281!3d49.600364071323256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d826022b3d07cb%3A0x4004c49d0d6ef764!2z0LLRg9C70LjRhtGPINCc0LDRgNGI0LDQu9CwINCR0ZbRgNGO0LfQvtCy0LAsIDIsINCf0L7Qu9GC0LDQstCwLCDQn9C-0LvRgtCw0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgMzYwMDA!5e0!3m2!1suk!2sua!4v1703025515868!5m2!1suk!2sua"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/swiperSetting.js"></script>
     <script src="js/renderFunctions.js"></script>

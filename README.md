@@ -26,6 +26,7 @@ styles/ # Стилі (SCSS файли)
 index.html # Головний HTML файл
 about.html # HTML файл для сторінки "Про нас"
 product.html # HTML файл для сторінки "Продукція"
+news.html # HTML файл для сторінки "Продукція"
 
 ## Запуск проекту
 
