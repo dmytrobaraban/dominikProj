@@ -211,6 +211,16 @@ a {
   margin: 10px 0;
 }
 
+@media (max-width: 700px) {
+  .about-us {
+    padding: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .about-us {
+    padding: 0.5rem;
+  }
+}
 .products {
   position: relative;
   max-width: 1250px;
@@ -280,6 +290,16 @@ a {
   display: block;
 }
 
+@media (max-width: 700px) {
+  .products {
+    padding: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .products {
+    padding: 0.5rem;
+  }
+}
 .news {
   max-width: 1250px;
   margin: 0 auto;
@@ -351,6 +371,9 @@ a {
 }
 
 @media (max-width: 700px) {
+  .news {
+    padding: 1rem;
+  }
   .post-header {
     font-size: 1em;
   }
@@ -370,6 +393,9 @@ a {
   }
 }
 @media (max-width: 500px) {
+  .news {
+    padding: 0.5rem;
+  }
   .post img {
     max-width: 200px;
   }

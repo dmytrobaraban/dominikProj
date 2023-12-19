@@ -70,3 +70,15 @@
 .active {
   display: block;
 }
+
+@media (max-width: 700px) {
+  .products {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .products {
+    padding: 0.5rem;
+  }
+}
